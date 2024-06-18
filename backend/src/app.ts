@@ -4,6 +4,9 @@ import "dotenv/config";
 import cookieParser from "cookie-parser";
 import path from 'path';
 
+import swaggerUi from "swagger-ui-express";
+import swaggerOutput from "./json/swagger_output.json"
+
 const app = express();
 
 app.use(express.json());
@@ -31,6 +34,10 @@ app.get("*", (req: Request, res: Response) => {
     path.join(__dirname, "../../frontend/dist/index.html")
   );
 })
+
+const options = { explorer: true, }
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOutput, options));
+
 
 
 export { app };

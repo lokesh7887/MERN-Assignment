@@ -9,7 +9,7 @@ import { getProductData } from "../api/api";
 import { SearchParams } from "../types/types";
 
 const initDataHandler = asyncHandler(async (req, res) => {
-
+  //#swagger.tags = ['Products ']
   const existingProducts = await Product.find();
 
   if (existingProducts.length > 0) {
@@ -27,7 +27,7 @@ const initDataHandler = asyncHandler(async (req, res) => {
 
 const getAllProductsData = asyncHandler(async (req, res) => {
 
-
+  //#swagger.tags = ['Products ']
   const products = await Product.find().sort({ id: 'asc' });
 
 
@@ -42,7 +42,7 @@ const getAllProductsData = asyncHandler(async (req, res) => {
 
 
 const searchProduct = asyncHandler(async (req, res) => {
-
+  //#swagger.tags = ['Products ']
   // console.log(req.query)
 
   const query = constructorSearchQuery(req.query);

@@ -6,6 +6,7 @@ import { asyncHandler } from "../utils/asyncHandler";
 import Product from "../models/product.model";
 
 const statisticsOfTheProductRoutes = asyncHandler(async (req, res) => {
+  //#swagger.tags = ['statistics']
 
   const { month } = req.query as any;
   if (!month) return res.status(400).json({ message: "Provide month" });
@@ -37,7 +38,7 @@ const statisticsOfTheProductRoutes = asyncHandler(async (req, res) => {
 
 
 const barChartOfTheProductRoutes = asyncHandler(async (req, res) => {
-
+  //#swagger.tags = ['statistics']
   const { month } = req.query;
 
   const startDate = new Date(`${month}-01T00:00:00Z`);
@@ -77,7 +78,7 @@ const barChartOfTheProductRoutes = asyncHandler(async (req, res) => {
 });
 
 const pieChartOfTheProductRoutes = asyncHandler(async (req, res) => {
-
+  //#swagger.tags = ['statistics']
   const { month } = req.query as any;
 
   if (!month || isNaN(parseInt(month))) {
@@ -111,6 +112,8 @@ const pieChartOfTheProductRoutes = asyncHandler(async (req, res) => {
 
 
 const combinedDataAPI = asyncHandler(async (req, res) => {
+  //#swagger.tags = ['statistics']
+
   const { month } = req.query as any;
   if (!month || isNaN(parseInt(month))) {
     throw new ApiError(400, "Provide a valid month");
