@@ -29,11 +29,11 @@ import analyticsRoutes from "./routes/analytics.routes"
 app.use("/api/v1/product", productRoutes)
 app.use("/api/v1/analytics", analyticsRoutes)
 
-app.get("*", (req: Request, res: Response) => {
-  res.sendFile(
-    path.join(__dirname, "../../frontend/dist/index.html")
-  );
-})
+// app.get("*", (req: Request, res: Response) => {
+//   res.sendFile(
+//     path.join(__dirname, "../../frontend/dist/index.html")
+//   );
+// })
 
 const options = { explorer: true, }
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOutput, options));
