@@ -6,6 +6,10 @@ This project is a full-stack application developed using the MERN (MongoDB, Expr
 
 ## Backend
 
+### Swagger Docs
+
+- [Swagger Docs link](https://roxciler-systems-assement.onrender.com/api-docs/)
+
 ### Initialization API
 
 - **Endpoint:** `/api/v1/product/initialize-seed-data`
